@@ -1,0 +1,3 @@
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+async function request(path, options = {}) { const response = await fetch(`${API_URL}${path}`, { credentials: 'include', headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }, ...options }); const body = response.status === 204 ? null : await response.json().catch(() => ({})); if (!response.ok) throw new Error(body.error || 'Something went wrong.'); return body; }
+export const api = { register: (payload) => request('/auth/register', { method: 'POST', body: JSON.stringify(payload) }), login: (payload) => request('/auth/login', { method: 'POST', body: JSON.stringify(payload) }), me: () => request('/auth/me'), logout: () => request('/auth/logout', { method: 'POST' }) };

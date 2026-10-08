@@ -1,0 +1,2 @@
+import { ShieldCheck } from 'lucide-react';
+export default function AuthLayout({ eyebrow, title, subtitle, children, footer }) { return <main className="auth-shell"><section className="auth-brand"><div className="brand-mark"><ShieldCheck size={26} /></div><span>Sentinel<span className="brand-dot">.</span></span></section><section className="auth-card"><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p className="muted">{subtitle}</p>{children}{footer}</section><p className="auth-note">Protected by practical security controls · Built for learning</p></main>; }

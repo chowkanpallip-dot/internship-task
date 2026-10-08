@@ -1,0 +1,1 @@
+Add internship screenshots here after running the project: registration, login, successful dashboard, protected API response, passing tests and generic invalid-login feedback. Do not include real passwords or personal data.
